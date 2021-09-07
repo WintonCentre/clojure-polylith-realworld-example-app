@@ -1,5 +1,5 @@
 (ns clojure.realworld.tag.core-test
-  (:require [clojure.test :refer :all]
+  (:require [clojure.test :refer [deftest use-fixtures is]]
             [clojure.realworld.database.interface :as database]
             [clojure.realworld.tag.core :as core]
             [clojure.java.jdbc :as jdbc]))

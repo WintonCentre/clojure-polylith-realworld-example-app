@@ -3,7 +3,7 @@
             [clojure.java.jdbc :as jdbc]
             [clojure.realworld.comment.store :as store]
             [clojure.realworld.database.interface :as database]
-            [clojure.test :refer :all]))
+            [clojure.test :refer [deftest use-fixtures is]]))
 
 (defn test-db
   ([] {:classname   "org.sqlite.JDBC"

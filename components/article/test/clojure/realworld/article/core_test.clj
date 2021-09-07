@@ -6,7 +6,7 @@
             [clojure.realworld.user.interface.spec :as user-spec]
             [clojure.spec.alpha :as s]
             [clojure.spec.gen.alpha :as gen]
-            [clojure.test :refer :all]))
+            [clojure.test :refer [deftest use-fixtures is]]))
 
 (defn- test-db
   ([] {:classname   "org.sqlite.JDBC"

@@ -3,7 +3,7 @@
             [clojure.java.jdbc :as jdbc]
             [clojure.realworld.database.interface :as database]
             [clojure.realworld.article.store :as store]
-            [clojure.test :refer :all]))
+            [clojure.test :refer [deftest use-fixtures is]]))
 
 (defn test-db
   ([] {:classname   "org.sqlite.JDBC"
@@ -64,8 +64,8 @@
             {:id   2
              :name "tag2"}
             {:id   3
-             :name "tag3"}
-            res]))))
+             :name "tag3"}]
+           res))))
 
 (deftest add-tags-to-article!--test
   (let [_ (jdbc/insert-multi! (test-db) :tag [{:name "tag1"}
@@ -259,7 +259,7 @@
     (is (= ["slug3" "slug2" "slug1"]
            (mapv :slug res2)))))
 
-(deftest articles-by-author--some-articles-found--return-articles
+#_(deftest articles-by-author--some-articles-found--return-articles
   (let [_ (jdbc/insert-multi! (test-db) :user [{:username "username1"}
                                                {:username "username2"}])
         _ (jdbc/insert-multi! (test-db) :article [{:slug "slug1" :userId 1}

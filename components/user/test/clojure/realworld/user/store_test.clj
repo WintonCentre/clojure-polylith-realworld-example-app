@@ -2,7 +2,7 @@
   (:require [clojure.java.jdbc :as jdbc]
             [clojure.realworld.database.interface :as database]
             [clojure.realworld.user.store :as store]
-            [clojure.test :refer :all]))
+            [clojure.test :refer [deftest use-fixtures is]]))
 
 (defn test-db
   ([] {:classname   "org.sqlite.JDBC"
